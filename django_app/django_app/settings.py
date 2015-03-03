@@ -38,7 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'polls'
+    'polls',
+    'dcc_colab'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -84,3 +85,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+FACEBOOK_APP_ID = '252774131593896'
+FACEBOOK_API_SECRET = '1777932d489db9415b00e59fd7904aeb'
+
+FACEBOOK_EXTENDED_PERMISSIONS = ['email']

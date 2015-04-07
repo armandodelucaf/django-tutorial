@@ -39,7 +39,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'polls',
-    'dcc_colab'
+    'dcc_colab',
+    'twitter_bootstrap',
+    'social_auth',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -51,6 +53,15 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
+
+AUTHENTICATION_BACKENDS = (
+    'social_auth.backends.facebook.FacebookBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+LOGIN_URL          = '/login/'
+LOGIN_REDIRECT_URL = '/home/'
+LOGIN_ERROR_URL    = '/login-error/'
 
 ROOT_URLCONF = 'django_app.urls'
 
@@ -66,6 +77,29 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+STATIC_URL = '/static/'
+
+STATICFILES_FINDERS = (
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder"
+)
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+    '/var/www/static/',
+)
+
+TEMPLATE_DIRS = (
+    '/var/templates/dcc_colab', '/var/templates'
+)
+
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader'
+)
+
+SESSION_SERIALIZER='django.contrib.sessions.serializers.PickleSerializer'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/

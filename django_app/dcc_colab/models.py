@@ -25,7 +25,7 @@ class User(models.Model):
 
 class Course(models.Model):
     name = models.CharField(max_length=200, verbose_name=u'Nome')
-    professors = models.ManyToManyField(User)
+    professors = models.ManyToManyField(User, verbose_name=u'Professores', blank=True)
 
     class Meta:
         verbose_name = u'Disciplina'
@@ -36,7 +36,11 @@ class Course(models.Model):
 
 class Topic(models.Model):
     name = models.CharField(max_length=200, verbose_name=u'Tema')
-    course = models.ForeignKey(Course)
+    course = models.ForeignKey(Course, verbose_name=u'Disciplina')
+
+    class Meta:
+        verbose_name = u'Tópico'
+        verbose_name_plural = u'Tópicos'
 
     def __str__(self):
         return self.name.encode('utf-8')

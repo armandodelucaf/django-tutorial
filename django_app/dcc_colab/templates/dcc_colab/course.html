@@ -1,9 +1,7 @@
 {% extends 'dcc_colab/base.html'%}
 {% block content %}
 <!-- Main jumbotron for a primary marketing message or call to action -->
-  <div class="jumbotron">
-      {% load facebook_connect %}
-      {% facebook_script %}
-      {% facebook_button %}
-  </div>
+    <div class="jumbotron">
+        <h2>Disciplina - {{course}}</h2>
+    </div>
 {% endblock %}

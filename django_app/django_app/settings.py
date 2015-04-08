@@ -41,7 +41,7 @@ INSTALLED_APPS = (
     'polls',
     'dcc_colab',
     'twitter_bootstrap',
-    'social_auth',
+    'facebook_connect',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -121,6 +121,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 FACEBOOK_APP_ID = '252774131593896'
-FACEBOOK_API_SECRET = '1777932d489db9415b00e59fd7904aeb'
+FACEBOOK_APP_SECRET = '1777932d489db9415b00e59fd7904aeb'
+
+FACEBOOK_LOGIN_REDIRECT = "/home"
+FACEBOOK_SCOPE = "email"
 
 FACEBOOK_EXTENDED_PERMISSIONS = ['email']

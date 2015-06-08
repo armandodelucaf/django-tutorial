@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'dcc_colab',
     'twitter_bootstrap',
     'facebook_connect',
+    'south',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -55,7 +56,6 @@ MIDDLEWARE_CLASSES = (
 )
 
 AUTHENTICATION_BACKENDS = (
-    'social_auth.backends.facebook.FacebookBackend',
     'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -76,6 +76,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+}
+
+SOUTH_DATABASE_ADAPTERS = {
+    'default': "south.db.sqlite3"
 }
 
 STATIC_URL = '/static/'

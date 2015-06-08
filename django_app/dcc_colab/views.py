@@ -3,7 +3,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import RequestContext, loader
-from social_auth.models import UserSocialAuth
 from django.contrib.auth.decorators import login_required
 from dcc_colab.models import *
 

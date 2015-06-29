@@ -1,3 +1,2 @@
 Django==1.8
 django-twitter-bootstrap==3.3.0
-south==1.0.2

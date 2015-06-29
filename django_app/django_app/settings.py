@@ -42,7 +42,6 @@ INSTALLED_APPS = (
     'dcc_colab',
     'twitter_bootstrap',
     'facebook_connect',
-    'south',
 )
 
 MIDDLEWARE_CLASSES = (
